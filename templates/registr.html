@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{% block title %} Registration {% endblock %}</h1>
+
+<form method="post">
+  <h2>Register Form</h2>
+  <link rel="stylesheet" href="/static/css/style.css">
+  
+<div class="input-container">
+    <i class="fa fa-user icon"></i>
+       <input type="text" name="usrname"
+               placeholder="Username" class="input-field"
+               value="{{ request.form['usrname'] }}"></input>      
+  </div>
+
+<div class="input-container">
+    <i class="fa fa-envelope icon"></i>
+       <input type="text" name="email"
+               placeholder="Email" class="input-field"
+               value="{{ request.form['email'] }}"></input>
+  </div>
+
+<div class="input-container">
+    <i class="fa fa-key icon"></i>
+       <input class="input-field" type="password"
+              placeholder="Password" name="psw"
+              value="{{ request.form['psw'] }}"></input>
+  </div>
+
+  <button type="submit" class="btn">Register</button>
+</form>
+{% endblock %}
+
